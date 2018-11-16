@@ -1,0 +1,16 @@
+html, body{
+   	height:100%;
+}
+
+.full-div {
+	height: 100%;
+}
+
+.half-vert-div {
+	width:50%;
+	height:100%;
+}
+
+.half-hor-div {
+	height: 50%;
+}
