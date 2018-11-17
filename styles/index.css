@@ -511,6 +511,10 @@ html, body {
   height: 100%;
 }
 
+.half-div {
+  height: 50%;
+}
+
 .third-div {
-  height: 33%;
+  height: 33.333%;
 }
