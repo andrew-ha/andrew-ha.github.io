@@ -32,6 +32,7 @@ $("#show-sidebar").click(function() {
 
 $(document).ready(function (){
   $(".scroll").click(function (){
+    console.log("animating scroll");
     $('html, body').animate({
       scrollTop: $($(this).attr('href')).offset().top
     }, 1000);
