@@ -50,8 +50,8 @@ body {
 .sidebar-wrapper .sidebar-search input.search-menu,
 .sidebar-wrapper .sidebar-search .input-group-text,
 .sidebar-wrapper .sidebar-menu ul li a,
-#show-sidebar,
-#close-sidebar {
+/*#show-sidebar,*/
+.close-sidebar {
   -webkit-transition: all 0.3s ease;
   -moz-transition: all 0.3s ease;
   -ms-transition: all 0.3s ease;
@@ -83,18 +83,18 @@ body {
   left: 0px;
 }
 
-@media screen and (min-width: 768px) {
+/*@media screen and (min-width: 768px) {
   .page-wrapper.toggled .page-content {
-    padding-left: 300px;
+    padding-left: 260px;
   }
-}
+}*/
 /*----------------show sidebar button----------------*/
 #show-sidebar {
   position: fixed;
-  left: 0;
-  top: 10px;
-  border-radius: 0 4px 4px 0px;
-  width: 35px;
+  left: 20px;
+  top: 20px;
+  /*border-radius: 4px 4px 4px 4px;
+  width: 35px;*/
   transition-delay: 0.3s;
 }
 .page-wrapper.toggled #show-sidebar {
@@ -149,7 +149,7 @@ body {
   flex-grow: 1;
 }
 
-.sidebar-wrapper .sidebar-brand #close-sidebar {
+.sidebar-wrapper .sidebar-brand .close-sidebar {
   cursor: pointer;
   font-size: 20px;
 }
@@ -438,11 +438,11 @@ body {
     color: #ffffff;
 }
 
-.page-wrapper.chiller-theme.toggled #close-sidebar {
+.page-wrapper.chiller-theme.toggled .close-sidebar {
     color: #bdbdbd;
 }
 
-.page-wrapper.chiller-theme.toggled #close-sidebar:hover {
+.page-wrapper.chiller-theme.toggled .close-sidebar:hover {
     color: #ffffff;
 }
 

@@ -22,10 +22,18 @@ jQuery(function ($) {
   }
 });
 
-$("#close-sidebar").click(function() {
+$(".close-sidebar").click(function() {
   $(".page-wrapper").removeClass("toggled");
 });
 $("#show-sidebar").click(function() {
   $(".page-wrapper").addClass("toggled");
 });
+});
+
+$(document).ready(function (){
+  $(".scroll").click(function (){
+    $('html, body').animate({
+      scrollTop: $($(this).attr('href')).offset().top
+    }, 1000);
+  });
 });
