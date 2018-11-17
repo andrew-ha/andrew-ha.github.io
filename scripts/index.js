@@ -1,33 +1,31 @@
-/*$(document).ready(function() {
-  
-  $(window).scroll(function () { 
+jQuery(function ($) {
 
-    if ($(document).scrollTop() > $(window).height() ) {
-      $('#navbar-id').addClass('fixed-top');
-    }
-
-    if ($(document).scrollTop() < $(window).height() ) {
-      $('#navbar-id').removeClass('fixed-top');
-    }
-
-  });
-
-});*/
-
-/*// When the user scrolls the page, execute myFunction 
-window.onscroll = function() {myFunction()};
-
-// Get the navbar
-var navbar = document.getElementById("navbar-id");
-
-// Get the offset position of the navbar
-var sticky = navbar.offsetTop;
-
-// Add the sticky class to the navbar when you reach its scroll position. Remove "sticky" when you leave the scroll position
-function myFunction() {
-  if (window.pageYOffset >= sticky) {
-    navbar.classList.add("sticky")
+    $(".sidebar-dropdown > a").click(function() {
+  $(".sidebar-submenu").slideUp(200);
+  if (
+    $(this)
+      .parent()
+      .hasClass("active")
+  ) {
+    $(".sidebar-dropdown").removeClass("active");
+    $(this)
+      .parent()
+      .removeClass("active");
   } else {
-    navbar.classList.remove("sticky");
+    $(".sidebar-dropdown").removeClass("active");
+    $(this)
+      .next(".sidebar-submenu")
+      .slideDown(200);
+    $(this)
+      .parent()
+      .addClass("active");
   }
-}*/
+});
+
+$("#close-sidebar").click(function() {
+  $(".page-wrapper").removeClass("toggled");
+});
+$("#show-sidebar").click(function() {
+  $(".page-wrapper").addClass("toggled");
+});
+});
