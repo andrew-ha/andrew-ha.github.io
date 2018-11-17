@@ -91,8 +91,8 @@ body {
 /*----------------show sidebar button----------------*/
 #show-sidebar {
   position: fixed;
-  left: 20px;
-  top: 20px;
+  left: 15px;
+  top: 15px;
   /*border-radius: 4px 4px 4px 4px;
   width: 35px;*/
   transition-delay: 0.3s;
@@ -353,7 +353,7 @@ body {
 /*--------------------------page-content-----------------------------*/
 
 .page-wrapper .page-content {
-  display: inline-block;
+  /*display: inline-block;*/
   width: 100%;
   height: 100%;
   padding-left: 0px;
@@ -365,12 +365,16 @@ body {
 }
 
 .page-wrapper .page-content {
-  overflow-x: hidden;
+  /*overflow-x: hidden;*/
 }
 
 /*------scroll bar---------------------*/
 
-::-webkit-scrollbar {
+::-webkit-scrollbar { 
+    display: none; 
+}
+
+/*::-webkit-scrollbar {
   width: 7px;
   height: 7px;
 }
@@ -402,7 +406,7 @@ body {
 }
 ::-webkit-scrollbar-corner {
   background: transparent;
-}
+}*/
 
 
 /*-----------------------------chiller-theme-------------------------------------------------*/
@@ -481,7 +485,7 @@ body {
     border-right: none;
 }
 
-.chiller-theme .mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar,
+/*.chiller-theme .mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar,
 .chiller-theme .mCSB_scrollTools .mCSB_dragger.mCSB_dragger_onDrag .mCSB_dragger_bar,
 .chiller-theme .mCSB_scrollTools .mCSB_dragger:hover .mCSB_dragger_bar {
     background: #636363;
@@ -489,14 +493,24 @@ body {
 
 .chiller-theme .mCSB_scrollTools .mCSB_draggerRail {
     background-color: transparent;
-}
+}*/
 
 /*-----------------------------my css things-------------------------------------------------*/
 html, body {
-    height: 100%;
+/*    height: 100%;
     overflow-y: hidden;
+    height: auto;
+    min-height: 100%;*/
 }
-.container-fluid {
-    height: 100%;
-    overflow-y: hidden; /* don't show content that exceeds my height */
+
+/*.container-fluid { 
+    overflow-y: hidden;
+}*/
+
+.full-div {
+  height: 100%;
+}
+
+.third-div {
+  height: 33%;
 }
