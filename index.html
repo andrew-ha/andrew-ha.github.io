@@ -8,8 +8,22 @@
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
 </head>
 <body>
+	<!-- <div class="right-navbar debug-blue"> -->
+		<!-- d-flex justify-content-end align-items-center -->
+<!-- 		<nav class="debug-green">
+      <ul>
+        <li><a href="#start-section"><i class="fa fa-home"></i></a></li>
+        <li><a href="#about-section"><i class="fa fa-user"></i></a></li>
+        <li><a href="#work-section"><i class="fa fa-building"></i></a></li>
+        <li><a href="#skills-section"><i class="fas fa-hammer"></i></a></li>
+        <li><a href="#projects-section"><i class="fa fa-code"></i></a></li>
+        <li><a href="#volunteering-section"><i class="fa fa-heart"></i></a></li>
+        <li><a href="#details-section"><i class="fa fa-address-book"></i></a></li>
+      </ul>
+  	</nav> -->
+	<!-- </div> -->
 
-	<div class="container-fluid d-flex align-items-end justify-content-center" id="start-section" style="background-color: #4e90ec;">
+<!-- 	<div class="container-fluid d-flex align-items-end justify-content-center" id="start-section" style="background-color: #4e90ec;">
 		<nav class="navbar navbar-expand-lg navbar-dark">
 		  <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 		    <span class="navbar-toggler-icon"></span>
@@ -21,10 +35,13 @@
 			      <a class="nav-link scroll" href="#start-section">Home</a>
 			    </li>
 			    <li class="nav-item" id="about-li">
-			      <a class="nav-link scroll" href="#about-section">About Me</a>
+			      <a class="nav-link scroll" href="#about-section">About</a>
 			    </li>
 			    <li class="nav-item" id="work-li">
-			      <a class="nav-link scroll" href="#work-section">Work Experience</a>
+			      <a class="nav-link scroll" href="#work-section">Experience</a>
+			    </li>
+			    <li class="nav-item" id="skills-li">
+			      <a class="nav-link scroll" href="#skills-section">Skills</a>
 			    </li>
 			    <li class="nav-item" id="projects-li">
 			      <a class="nav-link scroll" href="#projects-section">Projects</a>
@@ -33,164 +50,335 @@
 			      <a class="nav-link scroll" href="#volunteering-section">Volunteering</a>
 			    </li>
 			    <li class="nav-item" id="details-li">
-			      <a class="nav-link scroll" href="#details-section">Details</a>
+			      <a class="nav-link scroll" href="#details-section">Contact</a>
 			    </li>
 		    </ul>
 		  </div>
 		</nav>
+	</div> -->
+
+	<div class="container-fluid d-flex justify-content-center align-items-center" id="start-section">
+		<h1 class="text-light">Title</h1>
+		<!-- <div class="debug-red" style="position:fixed;"></div> -->
 	</div>
 
-	<div class="container-fluid" id="about-section" style="background-color: #343a40;">
+	<div class="container-fluid d-flex flex-column align-items-center" id="about-section">
 
-	</div>
-	<div class="container-fluid" id="work-section" style="background-color: #4e90ec;">
-	
-	</div>
-	<div class="container-fluid d-flex align-items-center" id="projects-section" style="background-color: #343a40;">
-		<div id="carouselIndicators" class="carousel slide flex-fill debug-green" data-ride="carousel">
-		  <!-- <ol class="carousel-indicators debug-red">
-		    <li data-target="#carouselIndicators" data-slide-to="0" class="active"></li>
-		    <li data-target="#carouselIndicators" data-slide-to="1"></li>
-		    <li data-target="#carouselIndicators" data-slide-to="2"></li>
-		    <li data-target="#carouselIndicators" data-slide-to="3"></li>
-		  </ol> -->
-		  <div class="carousel-inner" role="listbox">
-		    <div class="carousel-item active">
-					<div class="d-flex justify-content-center active">
-						<div class="debug-blue col-lg-5 mr-4">
-						</div>
-						<div class="col-lg-4">
-							<div class="row wf">
-								<h1>Database Web App</h1>
-							</div>
-							<div class="row wf">
-								<ul>
-									<li>Webapp</li>
-									<li>Front-End: React and Bootstrap</li>
-									<li>Back-End: AWS Dynamo DB and Cognito</li>
-									<li>Took _ weeks to complete it</li>
-									<li><a href="https://s3-ap-southeast-2.amazonaws.com/phapbaodatabase/index.html">Website here</a></li>
-								</ul>
-							</div>
-							<div class="row wf">
-								<h2>Technologies Used:</h2>
-							</div>
-							<div class="row wf">
-								<i class="fab fa-tech fa-html5 mr-4"></i>
-								<i class="fab fa-tech fa-css3 mr-4"></i>
-								<i class="fab fa-tech fa-js mr-4"></i>
-								<i class="fab fa-tech fa-react mr-4"></i>
-								<i class="fab fa-tech fa-aws"></i>
-							</div>			
-						</div>
-					</div>
-		    </div>
-		    <div class="carousel-item">
-					<div class="d-flex justify-content-center active">
-						<div class="debug-blue col-lg-5 mr-4">
-						</div>
-						<div class="col-lg-4">
-							<div class="row wf">
-								<h1>Streami</h1>
-							</div>
-							<div class="row wf">
-								<ul>
-									<li>Webapp</li>
-									<li>Front-End: React</li>
-									<li>Back-End: NodeJS, Spotify and Youtube APIs</li>
-									<li>Used Agile Methodologies</li>
-									<li><a href="https://github.com/ramwan/music-streaming">Github Repo Here</a></li>
-								</ul>
-							</div>
-							<div class="row wf">
-								<h2>Technologies Used:</h2>
-							</div>
-							<div class="row wf">
-								<i class="fab fa-tech fa-js mr-4"></i>
-								<i class="fab fa-tech fa-react mr-4"></i>
-								<i class="fab fa-tech fa-spotify mr-4"></i>
-								<i class="fab fa-tech fa-youtube mr-4"></i>
-								<i class="fab fa-tech fa-github"></i>
-							</div>			
-						</div>
-					</div>
-		    </div>
-		    <div class="carousel-item">
-					<div class="d-flex justify-content-center active">
-						<div class="debug-blue col-lg-5 mr-4">
-						</div>
-						<div class="col-lg-4">
-							<div class="row wf">
-								<h1>CI/CD Pipeline</h1>
-							</div>
-							<div class="row wf">
-								<ul>
-									<li>Created a CI/CD Pipeline to deploy a webapp.</li>
-									<li>Pipeline is made using AWS CodePipeline.</li>
-									<li>Created a CodeCommit repository, CodeBuild environment and ECS cluster with load balancing.</li>
-									<li>Took 3 days to complete it.</li>
-								</ul>
-							</div>
-							<div class="row wf">
-								<h2>Technologies Used:</h2>
-							</div>
-							<div class="row wf">
-								<i class="fab fa-tech fa-aws mr-4"></i>
-								<i class="fab fa-tech fa-linux"></i>
-							</div>			
-						</div>
-					</div>
-		    </div>
-		    <div class="carousel-item">
-					<div class="d-flex justify-content-center active">
-						<div class="debug-blue col-lg-5 mr-4">
-						</div>
-						<div class="col-lg-4">
-							<div class="row wf">
-								<h1>Facial Recognition App</h1>
-							</div>
-							<div class="row wf">
-								<ul>
-									<li>Webapp</li>
-									<li>Front-End: HTML5, CSS3 and Javascript</li>
-									<li>Back-End: AWS Rekognition</li>
-									<li>Took 1 week to complete it</li>
-									<li><a href="https://s3.amazonaws.com/2018s1team11/index.html">Website here</a></li>
-								</ul>
-							</div>
-							<div class="row wf">
-								<h2>Technologies Used:</h2>
-							</div>
-							<div class="row wf">
-								<i class="fab fa-tech fa-html5 mr-4"></i>
-								<i class="fab fa-tech fa-css3 mr-4"></i>
-								<i class="fab fa-tech fa-js mr-4"></i>
-								<i class="fab fa-tech fa-aws mr-4"></i>
-							</div>			
-						</div>
-					</div>
-		    </div>
-		  </div>
-		  <a class="carousel-control-prev" href="#carouselIndicators" role="button" data-slide="prev">
-		    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-		    <span class="sr-only">Previous</span>
-		  </a>
-		  <a class="carousel-control-next" href="#carouselIndicators" role="button" data-slide="next">
-		    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-		    <span class="sr-only">Next</span>
-		  </a>
+		<div class="container-fluid d-flex justify-content-center heading">
+			<!-- <img class="heading-bg" id="database-project-img" src="images/about-me.jpg" alt="Database"> -->
+			<h1 class="mt-5 mb-5 text-light">About Me</h1>
+		</div>
+		<!-- <h1 class="mt-5 mb-5 text-light">Skills</h1> -->
+
+		<div class="d-flex flex-row col-sm-8 text-light">
+
+			<div>
+
+				<div class="d-flex flex-row">
+					<p class="mr-3">HTML & CSS</p>
+				</div>
+
+				<div class="d-flex flex-row">
+					<p class="mr-3">Javascript</p>
+				</div>
+
+				<div class="d-flex flex-row">
+					<p class="mr-3">React</p>
+				</div>
+
+				<div class="d-flex flex-row">
+					<p class="mr-3">Git</p>
+				</div>
+
+				<div class="d-flex flex-row">
+					<p class="mr-3">AWS s3</p>
+				</div>
+
+				<div class="d-flex flex-row">
+					<p class="mr-3">AWS DynamoDB</p>
+				</div>
+
+			</div>
+
+			<div>
+
+				<div class="d-flex flex-row">
+					<p class="ml-3">50%</p>
+				</div>
+
+				<div class="d-flex flex-row">
+					<p class="ml-3">50%</p>
+				</div>
+
+				<div class="d-flex flex-row">
+					<p class="ml-3">50%</p>
+				</div>
+
+				<div class="d-flex flex-row">
+					<p class="ml-3">50%</p>
+				</div>
+
+				<div class="d-flex flex-row">
+					<p class="ml-3">50%</p>
+				</div>
+
+				<div class="d-flex flex-row">
+					<p class="ml-3">50%</p>
+				</div>
+
+			</div>
+
 		</div>
 	</div>
-	<div class="container-fluid" id="volunteering-section" style="background-color: #4e90ec;">
-		
+
+	<div class="container-fluid d-flex flex-column align-items-center" id="work-section">
+
+		<h1 class="mt-5 mb-5 text-light">Experience</h1>
+
+		<div class="col-12 no-padding" id="timeline-div">
+
+			<div class="col-12 d-flex justify-content-end">
+				<div class="col-2 d-flex flex-column align-items-center">
+					<div class="mt-3 circle d-flex align-items-center justify-content-center"><img src="images/aws.png"></div>
+					<div class="d-flex justify-content-center">
+						<div class="middle-line position-absolute" id="line"></div>
+					</div>
+				</div>
+				<div class="col-md-5 mb-5">
+					<div class="card">
+						<div class="card-body">
+							<h5 class="card-title">Amazon Web Services</h5>
+							<h6 class="card-title">Cloud Support Associate (DevOps)</h6>
+				    	<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+							<ul>
+								<li>Front-End: React and Bootstrap</li>
+								<li>Back-End: AWS Dynamo DB and Cognito</li>
+								<li>Took _ weeks to complete it</li>
+							</ul>
+			  		</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-12 d-flex justify-content-start start-left">
+				<div class="col-md-5 mb-5">
+					<div class="card">
+						<div class="card-body">
+							<h5 class="card-title">CodeCamp</h5>
+							<h6 class="card-title">Head Teacher</h6>
+					    <p class="card-text">Taught programming fundamentals to a class of 30 primary school children.</p>
+							<ul>
+								<li>Taught Scratch and Javascript.</li>
+								<li>Adapted a teaching style to simplify complex coding concepts which suits students with varying learning styles.</li>
+								<li>Applied debugging skills to quickly fix a range of problems in students’ code.</li>
+							</ul>
+					  </div>
+					</div>
+				</div>
+				<div class="col-2 d-flex flex-column align-items-center">
+					<div class="middle-line"></div>
+					<div class="mt-3 circle d-flex align-items-center justify-content-center position-absolute"><img src="images/codecamp.png"></div>
+				</div>
+			</div>
+
+			<div class="col-12 d-flex justify-content-end">
+				<div class="col-2 d-flex flex-column align-items-center">
+					<div class="middle-line"></div>
+					<div class="mt-3 circle d-flex align-items-center justify-content-center position-absolute"><img src="images/unsw.jpg"></div>
+				</div>
+				<div class="col-md-5 mb-5">
+					<div class="card">
+						<div class="card-body">
+							<h5 class="card-title">University of New South Wales</h5>
+							<h6 class="card-title">UNSW Heroes Developer</h6>
+					    <p class="card-text">Created a CI/CD Pipeline to deploy a webapp.</p>
+							<ul>
+								<li>Pipeline is made using AWS CodePipeline.</li>
+								<li>Created a CodeCommit repository, CodeBuild environment and ECS cluster with load balancing.</li>
+								<li>Took 3 days to complete it.</li>
+							</ul>
+					  </div>
+					</div> 
+				</div>
+			</div>
+
+			<div class="col-12 d-flex justify-content-start start-left">
+				<div class="col-md-5 mb-5">
+					<div class="card">
+						<div class="card-body">
+							<h5 class="card-title">CSE Revue</h5>
+							<h6 class="card-title">Producer</h6>
+					    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+							<ul>
+								<li>Front-End: React and Bootstrap</li>
+								<li>Back-End: AWS Dynamo DB and Cognito</li>
+								<li>Took _ weeks to complete it</li>
+							</ul>
+					  </div>
+					</div>
+				</div>
+				<div class="col-2 d-flex flex-column align-items-center">
+					<div class="middle-line"></div>
+					<div class="mt-3 circle d-flex align-items-center justify-content-center position-absolute"><img src="images/cse-revue.jpg"></div>
+				</div>
+			</div>
+
+			<div class="col-12 d-flex justify-content-end">
+				<div class="col-2 d-flex flex-column align-items-center">
+					<div class="middle-line"></div>
+					<div class="mt-3 circle d-flex align-items-center justify-content-center position-absolute"><img src="images/gdpt.jpg"></div>
+				</div>
+				<div class="col-md-5 mb-5">
+					<div class="card">
+						<div class="card-body">
+							<h5 class="card-title">CodeCamp</h5>
+							<h6 class="card-title">Head Teacher</h6>
+					    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+							<ul>
+								<li>Front-End: React</li>
+								<li>Back-End: NodeJS, Spotify and Youtube APIs</li>
+								<li>Used Agile Methodologies</li>
+							</ul>
+					  </div>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-12 d-flex justify-content-start start-left">
+				<div class="col-md-5 mb-5">
+					<div class="card">
+						<div class="card-body">
+							<h5 class="card-title">CodeCamp</h5>
+							<h6 class="card-title">Head Teacher</h6>
+					    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+							<ul>
+								<li>Front-End: React</li>
+								<li>Back-End: NodeJS, Spotify and Youtube APIs</li>
+								<li>Used Agile Methodologies</li>
+							</ul>
+					  </div>
+					</div>
+				</div>
+				<div class="col-2 d-flex flex-column flex-column align-items-center">
+					<div class="middle-line"></div>
+					<div class="mt-3 circle d-flex align-items-center justify-content-center position-absolute"><img src="images/pwc.png"></div>
+					<span class="mt-auto" id="bottom-circle"></span>
+				</div>
+			</div>
+
+		</div>
+
 	</div>
-	<div class="container-fluid" id="details-section" style="background-color: #343a40;">
+
+	<div class="container-fluid d-flex flex-column align-items-center" id="projects-section">
+
+		<h1 class="mt-5 mb-5 text-light">Portfolio</h1>
+
+		<div class="col-12 mb-3">
+
+			<div class="row d-flex justify-content-center" id="project-group">
+
+				<div class="col-4"><img class="project-img" id="database-project-img" src="images/database.jpg" alt="Database"></div>
+				<div class="col-4"><img class="project-img" id="streami-project-img" src="images/streami.jpg" alt="Streami"></div>
+				<div class="col-4"><img class="project-img" id="cicd-project-img" src="images/cicd.jpg" alt="CICD"></div>
+				<!-- <div class="col-3"><img class="project-img" id="rekog-project-img" src="images/fr.jpg" alt="Database"></div> -->
+
+				<div class="collapse col-12 project-card" id="database-project-card">
+					<div class="card card-body">
+						<i class="position-absolute mr-3 fa fa-times row"></i>
+						<h4 class="card-title">Database Web App</h4>
+				    <p>Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+						<ul>
+							<li>Front-End: React and Bootstrap</li>
+							<li>Back-End: AWS Dynamo DB and Cognito</li>
+							<li>Took _ weeks to complete it</li>
+						</ul>
+						<h6>Technologies Used:</h6>
+						<div class="row mt-1 mb-3">
+							<i class="fab fa-html5 mr-4 ml-5"></i>
+							<i class="fab fa-css3 mr-4"></i>
+							<i class="fab fa-js mr-4"></i>
+							<i class="fab fa-react mr-4"></i>
+							<i class="fab fa-aws"></i>
+						</div>
+						<a class="btn btn-primary" href="https://s3-ap-southeast-2.amazonaws.com/phapbaodatabase/index.html">Go to Demo</a>
+					</div>
+				</div>
+
+				<div class="collapse col-12 project-card" id="streami-project-card">
+					<div class=" card card-body">
+						<i class="position-absolute mr-3 fa fa-times row"></i>
+						<h4 class="card-title">Streami</h4>
+				    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+						<ul>
+							<li>Front-End: React</li>
+							<li>Back-End: NodeJS, Spotify and Youtube APIs</li>
+							<li>Used Agile Methodologies</li>
+						</ul>
+						<h6>Technologies Used:</h6>
+						<div class="row mt-1 mb-3">
+							<i class="fab fa-js mr-4 ml-5"></i>
+							<i class="fab fa-react mr-4"></i>
+							<i class="fab fa-spotify mr-4"></i>
+							<i class="fab fa-youtube mr-4"></i>
+							<i class="fab fa-github"></i>
+						</div>
+						<a class="btn btn-primary" href="https://github.com/ramwan/music-streaming">Go to Github Repo</a>
+					</div>
+				</div>
+
+				<div class="collapse col-12 project-card" id="cicd-project-card">
+					<div class="card card-body">
+						<i class="position-absolute mr-3 fa fa-times row"></i>
+						<h4 class="card-title">CI/CD Pipeline</h4>
+						<p class="card-text">Created a CI/CD Pipeline to deploy a webapp.</p>
+						<ul>
+							<li>Pipeline is made using AWS CodePipeline.</li>
+							<li>Created a CodeCommit repository, CodeBuild environment and ECS cluster with load balancing.</li>
+							<li>Took 3 days to complete it.</li>
+						</ul>
+						<h6>Technologies Used:</h6>
+						<div class="row mt-1 mb-3">
+							<i class="fab fa-aws mr-4 ml-5"></i>
+							<i class="fab fa-linux"></i>
+						</div>
+					</div>
+				</div>
+
+				<div class="collapse col-12 project-card" id="rekog-project-card">
+					<div class="card card-body">
+						<i class="position-absolute mr-3 fa fa-times row"></i>
+						<h4 class="card-title">Facial Recognition App</h4>
+				    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+						<ul>
+							<li>Front-End: HTML5, CSS3 and Javascript</li>
+							<li>Back-End: AWS Rekognition</li>
+							<li>Took 1 week to complete it</li>
+						</ul>
+						<h6>Technologies Used:</h6>
+						<div class="row mt-1 mb-3">
+							<i class="fab fa-html5 mr-4 ml-5"></i>
+							<i class="fab fa-css3 mr-4"></i>
+							<i class="fab fa-js mr-4"></i>
+							<i class="fab fa-aws mr-4"></i>
+						</div>
+						<a class="btn btn-primary" href="https://s3.amazonaws.com/2018s1team11/index.html">Go to Demo</a>
+					</div>
+				</div>
+
+			</div>
+
+		</div>
+
+	</div>
 	
+	<div class="container-fluid d-flex flex-column align-items-center" id="details-section">
+		<h1 class="mt-5 mb-5 text-light">Details</h1>
 	</div>
 
 </body>
-<script src="scripts/jquery.js"></script>
-<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> -->
+<!-- <script src="scripts/jquery.js"></script> -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 <script src="scripts/index.js"></script>

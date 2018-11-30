@@ -3,47 +3,199 @@ html, body {
   height: 100%;
 }
 
+/* Right side navbar */
+/*nav {
+  position: fixed;
+  top: 50%;
+  right: 0%;
+  transform: translate(-25%, -50%);
+}
+
+nav ul {
+  text-align: right;
+  list-style-position: inside;
+  list-style: none;
+  font-size: 25px;
+}
+
+nav ul li {
+  margin: 0 0 10px 0;
+}*/
+
 /* start container properties */
 #start-section {
   min-height: 100%;
+  background-color: #343a40;
 }
 
 /* about container properties */
 #about-section {
   min-height: 100%;
+  background-color: #343a40;
+  margin: 0px;
+  padding: 0px;
 }
 
-.nav + #about-section {
+.heading {
+  width: 100%;
+  height: 33%;
+}
+
+.heading-bg {
+  width: 100%;
+  height: 33%;
+  margin: 0px;
+  padding: 0px;
+  object-fit: cover;
+}
+
+/*.nav + #about-section {
   padding-top: 60px;
+} */
+
+/* work section properties */
+#work-section {
+  /*min-height: 100%;*/
+  background-color: #343a40;
+  /*background-image: url("../images/work.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;*/
+/*  filter: gray;
+  -webkit-filter: grayscale(1); */
 }
 
-#work-section {
-  height: 100%;
+#work-section #timeline-div {
+  margin: 0px;
+  padding: 0px;
+  width: 100%;
+  max-width: 800px;
 }
+
+#work-section #timeline-div .col-12 {
+  margin: 0px;
+  padding: 0px;
+}
+
+/* middle timeline bar */
+#work-section #timeline-div .col-2 {
+  /*min-height: 100px;*/
+  /*margin: 0px;*/
+  /*padding: 0px;*/
+}
+
+#work-section #timeline-div #line1 {
+  /*height:1000px;*/
+  /*position:absolute;*/
+  /*height: calc(100% - 70px);*/
+}
+
+#work-section #timeline-div .middle-line {
+  width:4px;
+  height:0%;
+  background-color: white;
+}
+
+#work-section .circle {
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+  background-color: white;
+}
+
+#work-section .circle img {
+  height: 55px;
+  width: 55px;
+  border-radius: 50%;
+}
+
+#work-section #bottom-circle {
+  height: 30px;
+  width: 30px;
+  background-color: white;
+  border-radius: 50%;
+/*  border-color: white;
+  border-style: solid;*/
+  /*display: inline-block;*/
+}
+
+/* timeline elements */
+#work-section #timeline-div .col-md-5 {
+  margin: 0px;
+  padding: 0px;
+}
+
+#work-section #timeline-div .card {
+  opacity: 0.4;
+}
+
+/******************* Timeline Demo - 8 *****************/
 
 /* project container properties */
 #projects-section {
+  /*min-height: 100%;*/
+  background-color: #343a40;
+}
+
+#projects-section .col-12 {
+  max-width: 800px;
+  margin: 0px;
+  padding: 0px;
+}
+
+#projects-section #project-group {
+  margin: 0px;
+  padding: 0px;
+}
+
+#projects-section #project-group .col-4 {
+  margin: 0px;
+  padding: 0px;
+}
+
+#projects-section #project-group .project-img {
+  width: 100%;
   height: 100%;
+  object-fit: cover;
+  filter: gray;
+  -webkit-filter: grayscale(1);
+  -webkit-transition: all .3s ease-in-out;  
 }
 
-.wf {
-  color: white;
-}
-
-.fa-tech {
-  font-size: 60px;
-}
-
-.fa-tech:hover { 
-    color: yellow;
-}
-
-#volunteering-section {
+#projects-section #project-group .project-img-clicked {
+  width: 100%;
   height: 100%;
+  object-fit: cover;
+  filter: none;
+  -webkit-filter: grayscale(0);
 }
 
+#projects-section #project-group .project-img:hover {
+  filter: none;
+  -webkit-filter: grayscale(0);
+}
+
+#projects-section #project-group .project-card {
+  margin: 0px;
+  padding: 0px;
+}
+
+#projects-section #project-group .project-card-no-trans {
+  transition: none;
+}
+
+#projects-section .card .fa-times {
+  right: 0;
+}
+
+#projects-section .card i {
+  font-size: 30px;
+}
+
+/* details container properties */
 #details-section {
-  height: 100%;
+  min-height: 100%;
+  background-color: #343a40;
 }
 
 /* remove scrollbar */
@@ -55,11 +207,13 @@ html, body {
 .debug-red {
   border-color: red;
   border-style: solid;
+  /*background: red;*/
 }
 
 .debug-blue {
   border-color: blue;
   border-style: solid;
+  /*background: blue;*/
 }
 
 .debug-green {
@@ -80,17 +234,4 @@ html, body {
 .debug-orange {
   border-color: orange;
   border-style: solid;
-}
-
-/* div things */
-.full-div {
-  height: 100%;
-}
-
-.half-div {
-  height: 50%;
-}
-
-.third-div {
-  height: 33%;
 }
