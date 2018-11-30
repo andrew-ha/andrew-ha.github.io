@@ -121,8 +121,8 @@ function sizeChanges () {
         $('.start-left').addClass('flex-row-reverse');
         $('.circle').addClass('circle-md');
         $('.company-img').addClass('company-img-md');
-        $('.circle').removeClass('circle');
-        $('.company-img').removeClass('company-img');
+        $('.circle-md').removeClass('circle');
+        $('.company-img-md').removeClass('company-img');
     } else {
         $('.start-left').removeClass('flex-row-reverse');
         $('.circle-md').addClass('circle');
