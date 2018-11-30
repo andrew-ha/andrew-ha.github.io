@@ -109,18 +109,28 @@ function removeAll() {
 var mdWidth = 768;
 
 $(document).ready(function() {
-    if ($(window).width() < mdWidth) {
-        $('.start-left').addClass('flex-row-reverse');
-    }
+    sizeChanges();
 });
 
 $(window).resize(function() {
+    sizeChanges();
+});
+
+function sizeChanges () {
     if ($(window).width() < mdWidth) {
         $('.start-left').addClass('flex-row-reverse');
+        $('.circle').addClass('circle-md');
+        $('.company-img').addClass('company-img-md');
+        $('.circle').removeClass('circle');
+        $('.company-img').removeClass('company-img');
     } else {
         $('.start-left').removeClass('flex-row-reverse');
+        $('.circle-md').addClass('circle');
+        $('.company-img-md').addClass('company-img');
+        $('.circle').removeClass('circle-md');
+        $('.company-img').removeClass('company-img-md');
     }
-});
+}
 
 var currPos = document.body.scrollTop || document.documentElement.scrollTop;
 

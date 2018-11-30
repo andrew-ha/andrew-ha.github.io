@@ -103,9 +103,22 @@ nav ul li {
   background-color: white;
 }
 
-#work-section .circle img {
+#work-section .circle-md {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  background-color: white;
+}
+
+#work-section .circle .company-img {
   height: 55px;
   width: 55px;
+  border-radius: 50%;
+}
+
+#work-section .company-img-md {
+  height: 45px;
+  width: 45px;
   border-radius: 50%;
 }
 
