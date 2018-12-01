@@ -133,19 +133,102 @@ function sizeChanges () {
 }
 
 var currPos = document.body.scrollTop || document.documentElement.scrollTop;
+var sectionOfScreen = 5/8;
+var posOnScreen = currPos + sectionOfScreen*document.documentElement.clientHeight;
+var iconList = document.getElementsByClassName('timeline-circle');
+var bodyList = document.getElementsByClassName('timeline-content');
+var currItem = determineCurrItem();
 
-$(window).scroll(function() {
-    currPos = document.body.scrollTop || document.documentElement.scrollTop;
-    var posOnScreen = currPos + (1/2)*document.documentElement.clientHeight;
-    if(posOnScreen >= $('#line').offset().top && posOnScreen <= $('#bottom-circle').offset().top + $('#bottom-circle').height()) {
-        var lineHeight = posOnScreen - $('#line').offset().top;
-        document.getElementById("line").style.height = lineHeight + "px";
-    } else if (posOnScreen < $('#line').offset().top) {
-        document.getElementById("line").style.height = "0px";
-    } else {
-        document.getElementById("line").style.height = $('#timeline-div').height() - 80 + "px"
+$(document).ready(function() {
+    for (var i = currItem; i < iconList.length; i++) {
+        $(iconList[i]).addClass('icon-disappear-animation');
+        if ($(window).width() >= mdWidth && $(bodyList[i]).parent().hasClass('start-left')) {
+            $(bodyList[i]).addClass('body-disappear-right');
+        } else {
+            $(bodyList[i]).addClass('body-disappear-left');
+        }
     }
 });
+
+$(window).scroll(function() {
+
+    // update current position
+    currPos = document.body.scrollTop || document.documentElement.scrollTop;
+    posOnScreen = currPos + sectionOfScreen*document.documentElement.clientHeight;
+
+    // draw the timeline line inside the timeline div
+    if (posOnScreen >= $('#timeline-line').offset().top && posOnScreen <= $('#bottom-circle').offset().top + $('#bottom-circle').height()) {
+        var lineHeight = posOnScreen - $('#timeline-line').offset().top;
+        document.getElementById("timeline-line").style.height = lineHeight + "px";
+    } else if (posOnScreen < $('#timeline-line').offset().top) {
+        document.getElementById("timeline-line").style.height = "0px";
+    } else {
+        document.getElementById("timeline-line").style.height = $('#bottom-circle').offset().top - $('#timeline-line').offset().top + "px";
+    }
+
+    // edge cases
+    if (currItem == 0) {
+        if (posOnScreen >= $(iconList[currItem]).offset().top) {
+            showTimelineSection();
+        }
+    } else if (currItem == iconList.length) {
+        if (posOnScreen < $(iconList[currItem-1]).offset().top) {
+            hideTimelineSection();
+        }
+    /// show icons after passing
+    } else if (posOnScreen >= $(iconList[currItem]).offset().top) {
+        showTimelineSection();
+    // hide icons after passing backwards
+    } else if (posOnScreen < $(iconList[currItem-1]).offset().top) {
+        hideTimelineSection();
+    }
+
+    // bottom circle
+    if (posOnScreen >= $('#bottom-circle').offset().top) {
+        $('#bottom-circle').addClass('icon-appear-animation');
+        $('#bottom-circle').removeClass('icon-disappear-animation');
+    } else {
+        $('#bottom-circle').addClass('icon-disappear-animation');
+        $('#bottom-circle').removeClass('icon-appear-animation');
+    }
+
+});
+
+// find out which part of the timeline the user is seeing, depending on current position of the viewer
+function determineCurrItem() {
+    for (var i = 0; i < iconList.length; i++) {
+        if ($(iconList[i]).offset().top >= posOnScreen) break;
+    }
+    return i;
+}
+
+function showTimelineSection() {
+    // iconList[currItem].style.visibility = 'visible';
+    $(iconList[currItem]).addClass('icon-appear-animation');
+    $(iconList[currItem]).removeClass('icon-disappear-animation');
+    bodyList[currItem].style.visibility = 'visible';
+    if ($(window).width() >= mdWidth && $(bodyList[currItem]).parent().hasClass('start-left')) {
+        $(bodyList[currItem]).addClass('body-appear-right');
+        $(bodyList[currItem]).removeClass('body-disappear-right');
+    } else {
+        $(bodyList[currItem]).addClass('body-appear-left');
+        $(bodyList[currItem]).removeClass('body-disappear-left');
+    }
+    currItem = determineCurrItem();
+}
+
+function hideTimelineSection() {
+    $(iconList[currItem-1]).addClass('icon-disappear-animation');
+    $(iconList[currItem-1]).removeClass('icon-appear-animation');
+    if ($(window).width() >= mdWidth && !$(bodyList[currItem]).parent().hasClass('start-left')) {
+        $(bodyList[currItem-1]).addClass('body-disappear-right');
+        $(bodyList[currItem-1]).removeClass('body-appear-right');
+    } else {
+        $(bodyList[currItem-1]).addClass('body-disappear-left');
+        $(bodyList[currItem-1]).removeClass('body-appear-left');
+    }
+    currItem = determineCurrItem();
+}
 
 // Project section javascript
 var activeCard = null;
