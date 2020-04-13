@@ -1,0 +1,115 @@
+Transform: AWS::Serverless-2016-10-31
+Resources:
+  Bucket:
+    Type: AWS::S3::Bucket
+    Properties:
+      PublicAccessBlockConfiguration:
+        BlockPublicAcls: FALSE
+        BlockPublicPolicy: FALSE
+        IgnorePublicAcls: FALSE
+        RestrictPublicBuckets: FALSE
+
+  AccessPolicy:
+    Type: AWS::S3::BucketPolicy
+    Properties:
+      Bucket: !Ref Bucket
+      PolicyDocument:
+        Statement: 
+          - 
+            Action: 
+              - "s3:GetObject"
+            Effect: "Allow"
+            Resource: 
+              Fn::Join: 
+                - ""
+                - 
+                  - "arn:aws:s3:::"
+                  - 
+                    Ref: "Bucket"
+                  - "/resume.pdf"
+            Principal: "*"
+
+  SendEmailApi:
+    Type: AWS::Serverless::Api
+    Properties:
+      StageName: prod
+      EndpointConfiguration: REGIONAL
+  SendEmailFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      Events:
+        ApiEvent:
+          Type: Api
+          Properties:
+            Path: /
+            Method: post
+            RestApiId: !Ref SendEmailApi
+      Runtime: python3.7
+      Handler: index.handler
+      Role: !GetAtt SendEmailFunctionRole.Arn
+      InlineCode:
+        !Join
+          - "\n"
+          - - "import json"
+            - "import boto3"
+            - "client = boto3.client('sns')"
+            - "def handler(event, __):"
+            - "  body = json.loads(event['body'])"
+            - "  print(body['name'])"
+            - "  print(body['email'])"
+            - "  print(body['message'])"
+            - "  statusCode=200"
+            - "  try:"
+            - "    client.publish("
+            - !Sub 
+              - "      TopicArn=\"${SnsTopic}\","
+              - { SnsTopic: !Ref SendEmailTopic }
+            - "      Message=body['message'],"
+            - "      Subject=\"Email from Resume Website: \"+body['name']+\" - \"+body['email']"
+            - "    )"
+            - "  except:"
+            - "    statusCode=500"
+            - "  return {"
+            - "    \"statusCode\": statusCode,"
+            - "    \"body\": \"Hello from Lambda!\""
+            - "  }"
+
+  SendEmailFunctionRole:
+    Type: AWS::IAM::Role
+    Properties:
+      AssumeRolePolicyDocument:
+        Version: "2012-10-17"
+        Statement: 
+          - 
+            Effect: "Allow"
+            Principal: 
+              Service: 
+                - "lambda.amazonaws.com"
+            Action: 
+              - "sts:AssumeRole"
+      ManagedPolicyArns:
+        - arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole
+
+  SendEmailFunctionRolePolicy:
+    Type: AWS::IAM::Policy
+    Properties:
+      PolicyName: LambdaPolicy
+      Roles:
+        - !Ref SendEmailFunctionRole
+      PolicyDocument:
+        Version: "2012-10-17"
+        Statement: 
+          - 
+            Effect: "Allow"
+            Action: "sns:Publish"
+            Resource: !Ref SendEmailTopic
+
+  SendEmailTopic:
+    Type: AWS::SNS::Topic
+
+  SendEmailTopicSubscription:
+    Type: AWS::SNS::Subscription
+    Properties:
+      TopicArn: !Ref SendEmailTopic
+      Protocol: email
+      Endpoint: andrew.pvh.ha@gmail.com
