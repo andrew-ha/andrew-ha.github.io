@@ -34,6 +34,8 @@ Resources:
     Properties:
       StageName: prod
       EndpointConfiguration: REGIONAL
+      Cors:
+        AllowOrigin: "'http://localhost:3000'"
   SendEmailFunction:
     Type: AWS::Serverless::Function
     Properties:
